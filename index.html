@@ -666,9 +666,12 @@ img {
                   };
 
                   fetch("https://script.google.com/macros/s/AKfycbytrtia2VwIcKtqGInGTf2pJ_-KNR4j5NxvxF0pstj4T7jNl_RE01RkjAH8JoZkBLhRrQ/exec", {
-                    method: "POST",
-                    body: JSON.stringify(data)
-                  })
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(data)
+})
                   .then(res => res.text())
                   .then(() => {
                     alert("Data berhasil dikirim!");
@@ -685,10 +688,13 @@ img {
         pesan: document.getElementById('ucapan-text').value
     };
 
-    fetch("https://script.google.com/macros/s/AKfycbytrtia2VwIcKtqGInGTf2pJ_-KNR4j5NxvxF0pstj4T7jNl_RE01RkjAH8JoZkBLhRrQ/exec", {
-        method: "POST",
-        body: JSON.stringify(data)
-    })
+ fetch("https://script.google.com/macros/s/AKfycbytrtia2VwIcKtqGInGTf2pJ_-KNR4j5NxvxF0pstj4T7jNl_RE01RkjAH8JoZkBLhRrQ/exec", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(data)
+})
     .then(res => res.text())
     .then(() => {
         alert("Ucapan berhasil dikirim!");
