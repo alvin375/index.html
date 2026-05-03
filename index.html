@@ -700,11 +700,18 @@ img {
 
 
 function loadUcapan() {
-    fetch("https://script.google.com/macros/s/AKfycbytrtia2VwIcKtqGInGTf2pJ_-KNR4j5NxvxF0pstj4T7jNl_RE01RkjAH8JoZkBLhRrQ/exec")
+    fetch("URL_WEB_APP_KAMU")
     .then(res => res.json())
     .then(data => {
+        console.log("DATA:", data); // 🔥 WAJIB CEK
+
         const list = document.getElementById('ucapan-list');
         list.innerHTML = "";
+
+        if (!data || data.length === 0) {
+            list.innerHTML = "<p class='text-white text-sm'>Belum ada ucapan</p>";
+            return;
+        }
 
         data.reverse().forEach(item => {
             const el = document.createElement('div');
@@ -715,11 +722,11 @@ function loadUcapan() {
             `;
             list.appendChild(el);
         });
+    })
+    .catch(err => {
+        console.log("ERROR:", err);
+        alert("Gagal load ucapan");
     });
-}
-
-window.onload = function() {
-    loadUcapan();
 }
     </script>
 </body>
