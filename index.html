@@ -125,7 +125,7 @@ img {
 
 
     <!-- COVER SCREEN (Opening) -->
-    <section id="cover-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-cover bg-center" style="background-image: url('https://raw.githubusercontent.com/alvin375/SAS/7f7a0a284620952ed72a9b0965a99e50ed746e14/19.JPG');">
+    <section id="cover-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-cover bg-center" style="background-image: url('https://raw.githubusercontent.com/alvin375/SAS/bb8ff6c7e860bc54f00895354ecb58b1d6710e13/WhatsApp%20Image%202026-05-02%20at%2022.10.19.jpeg');">
 
 
 
@@ -142,7 +142,7 @@ img {
             <p class="text-gray-200 text-sm mb-2">Kepada Yth. Bapak/Ibu/Saudara/i</p>
             <h2 id="guest-name" class="text-2xl font-semibold text-white mb-8 border-b-2 border-gold pb-2 inline-block">.........</h2>
             
-            <p class="text-black-300 text-xs mb-6 italic">Mohon maaf bila ada kesalahan penulisan nama/gelar</p>
+            <p class="text-gray-300 text-xs mb-6 italic">Mohon maaf bila ada kesalahan penulisan nama/gelar</p>
 
             <button onclick="openInvitation()" class="bg-gold hover:bg-gold-dark text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_15px_rgba(212,175,55,0.5)] flex items-center gap-2">
                 <i class="fa-solid fa-envelope-open-text"></i> Buka Undangan
@@ -666,12 +666,9 @@ img {
                   };
 
                   fetch("https://script.google.com/macros/s/AKfycbytrtia2VwIcKtqGInGTf2pJ_-KNR4j5NxvxF0pstj4T7jNl_RE01RkjAH8JoZkBLhRrQ/exec", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(data)
-})
+                    method: "POST",
+                    body: JSON.stringify(data)
+                  })
                   .then(res => res.text())
                   .then(() => {
                     alert("Data berhasil dikirim!");
@@ -688,13 +685,10 @@ img {
         pesan: document.getElementById('ucapan-text').value
     };
 
- fetch("https://script.google.com/macros/s/AKfycbytrtia2VwIcKtqGInGTf2pJ_-KNR4j5NxvxF0pstj4T7jNl_RE01RkjAH8JoZkBLhRrQ/exec", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(data)
-})
+    fetch("https://script.google.com/macros/s/AKfycbytrtia2VwIcKtqGInGTf2pJ_-KNR4j5NxvxF0pstj4T7jNl_RE01RkjAH8JoZkBLhRrQ/exec", {
+        method: "POST",
+        body: JSON.stringify(data)
+    })
     .then(res => res.text())
     .then(() => {
         alert("Ucapan berhasil dikirim!");
