@@ -744,11 +744,14 @@ function loadUcapan() {
             list.appendChild(el);
         });
     })
-    .catch(err => {
-        console.log("ERROR:", err);
-        alert("Gagal load ucapan");
-    });
+
+    }
+
+window.onload = function() {
+    loadUcapan();
 }
     </script>
 </body>
 </html>
+
+
